@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  db-multi-tenant:
+    image: postgres:14.2
+    container_name: pg-multi-tenant-kt-db
+    environment:
+      - POSTGRES_DB=multi-tenant-kt-db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    volumes:
+      - .docker/dev_ddata:/var/lib/postgresql
+#volumes:
+#  dev_data:
